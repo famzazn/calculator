@@ -43,17 +43,28 @@ clear.addEventListener('click', () => {
 
 
 
-const btn = document.querySelectorAll('.digits button, .operation button');
+const btn = document.querySelectorAll('.number, .operator');
 btn.forEach((button) => {
     button.addEventListener('click', () => {
         displayText += button.textContent;
         document.querySelector('.display').textContent = displayText;
+
     })
 })
 
+
+const num = document.querySelectorAll('.number');
+num.forEach((button) => {
+    button.addEventListener('click', () => {
+        number1 += button.textContent;
+        number2 += button.textContent;
+    })
+})
+
+
 const equal = document.querySelector('.equals')
 equal.addEventListener('click', () => {
-    displayText += '=' + operate()               
+    displayText += '=' + operate(number1, operator, number2);               
 })
 
 //Need to somehow make number input go into operate function
