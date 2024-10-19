@@ -1,4 +1,38 @@
+#dis {
+    display: flex;
+    justify-content: center;
+}
+
+#bdy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#clr, #eql {
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+}
+
+#clr button, #eql button {
+    min-width: 250px;
+}
+
+.operation {
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.operation button {
+    flex-grow: 1;
+}
+
 .display {
     border: 1px solid black;
     min-height: 20px;
+    min-width: 250px;
 }
+
