@@ -32,13 +32,12 @@ const operate = function(number1, operator, number2) {
 
 }
 
-console.log("operate() result is " + operate(6, "-", 9))
 
 let displayText = ''
 
 const clear = document.querySelector(".clear");
 clear.addEventListener('click', () => {
-    document.querySelectorAll('button').forEach((button) => button.disabled = false);
+    number1 = '';
     document.querySelector('.display').textContent = ""
     displayText = '';
 })
@@ -75,11 +74,9 @@ num.forEach((button) => {
 
 const equal = document.querySelector('.equals')
 equal.addEventListener('click', () => {
-    displayText += '=' + operate(Number(number1), operator, Number(number2));
+    displayText = operate(Number(number1), operator, Number(number2));
     document.querySelector('.display').textContent = displayText;
-    document.querySelectorAll('button').forEach((button) => button.disabled = true);
-    document.querySelector('.clear').disabled = false;
-    number1 = '';
+    number1 = operate(Number(number1), operator, Number(number2));
     number2 = '';
     operator = '';
     op_track = 0;
